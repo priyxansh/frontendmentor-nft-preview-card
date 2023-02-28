@@ -40,6 +40,9 @@ body {
     box-shadow: 0 20px 12px 20px hsl(0 0% 0% / 0.05),
         0 20px 12px 40px hsl(0 0% 0% / 0.03);
 }
+.card-image {
+    --border-radius: 10px;
+}
 .card-image img {
     width: 100%;
     border-radius: 10px;
@@ -97,4 +100,50 @@ body {
     max-width: 32px;
     border: 1px solid var(--white);
     border-radius: 50%;
+}
+
+/* Active states */
+
+.cursor-pointer {
+    cursor: pointer;
+}
+.color-transition {
+    transition: color 200ms ease;
+}
+.color-transition:hover {
+    color: var(--cyan);
+}
+.card-image {
+    position: relative;
+    display: flex;
+}
+.card-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: cyan;
+    opacity: 0;
+    transition: opacity 200ms ease;
+    border-radius: var(--border-radius);
+    z-index: 10;
+}
+.card-image::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    translate: -50% -50%;
+    z-index: 11;
+    background: url("images/icon-view.svg");
+    transition: opacity 200ms ease;
+    opacity: 0;
+    
+}
+.card-image:hover::after {
+    opacity: 0.5;
+}
+.card-image:hover::before{
+    opacity: 1;
 }
