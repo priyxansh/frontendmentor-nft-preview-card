@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+    --very-dark-blue-main: hsl(217, 54%, 11%);
+    --very-dark-blue-card: hsl(216, 50%, 16%);
+    --very-dark-blue-line: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+}
+body,
+html {
+    height: 100%;
+}
+body {
+    display: grid;
+    place-items: center;
+    background-color: var(--very-dark-blue-main);
+}
+.card {
+    --gap: 1.3rem;
+
+    max-width: 360px;
+    background-color: var(--very-dark-blue-card);
+    border-radius: 15px;
+    font-family: "Outfit";
+    color: var(--soft-blue);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+.card-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+.card-text {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.125rem;
+    gap: var(--gap);
+}
+.card-title {
+    font-size: 1.4rem;
+    color: white;
+    font-weight: 600;
+}
+.card-description {
+    font-weight: 300;
+}
+.card-price {
+    color: var(--cyan);
+    font-weight: 600;
+}
+.span-container {
+    display: flex;
+    justify-content: space-between;
+}
+.author-name {
+    color: white;
+}
